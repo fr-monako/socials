@@ -28,33 +28,30 @@
             gap: 1.5vw; /* Reduced space between buttons */
             justify-content: center;
         }
+        a {
+            text-decoration: none; /* Remove underline from links */
+        }
         button {
-            padding: 1vw 2vw; /* Increased padding for larger minimum size */
-            font-size: 1.5vw; /* Adjusted font size */
+            padding: 0.75vw 1.5vw; /* Reduced padding for the buttons */
+            font-size: 1.5vw; /* Reduced font size for the buttons */
             cursor: pointer;
             background-color: transparent; /* Remove background color */
             color: #333; /* Text color matches the main text color */
             border: none; /* Remove button border */
             border-radius: 0.4vw; /* Adjusted border radius */
             transition: color 0.3s, transform 0.3s;
-            min-width: 120px; /* Minimum width of buttons */
-            min-height: 40px; /* Minimum height of buttons */
         }
         button:hover {
             color: #555; /* Change text color on hover */
             transform: scale(1.05); /* Slightly increase button size on hover */
+            animation: blurAnimation 1s forwards; /* Apply animation on hover */
         }
-
-        /* Optional: Media query for smaller screens */
-        @media (max-width: 600px) {
-            .centered-text {
-                font-size: 12vw; /* Increase font size on smaller screens */
+        @keyframes blurAnimation {
+            0% {
+                filter: blur(1px); /* Apply blur at the start */
             }
-            button {
-                padding: 1.5vw 3vw; /* Increase padding on smaller screens */
-                font-size: 2vw; /* Increase font size on smaller screens */
-                min-width: 100px; /* Adjust minimum width on smaller screens */
-                min-height: 35px; /* Adjust minimum height on smaller screens */
+            100% {
+                filter: blur(0); /* Remove blur at the end */
             }
         }
     </style>
@@ -63,8 +60,12 @@
     <div class="centered-content">
         <div class="centered-text">fr monako</div>
         <div class="buttons">
-            <button>Button 1</button>
-            <button>Button 2</button>
+            <a href="https://www.twitch.tv/usecodemonako" target="_blank" rel="noopener noreferrer">
+                <button>Twitch</button>
+            </a>
+            <a href="https://www.youtube.com/@usecodemonako" target="_blank" rel="noopener noreferrer">
+                <button>YouTube</button>
+            </a>
         </div>
     </div>
 </body>
