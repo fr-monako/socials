@@ -29,18 +29,33 @@
             justify-content: center;
         }
         button {
-            padding: 0.75vw 1.5vw; /* Reduced padding for the buttons */
-            font-size: 1.5vw; /* Reduced font size for the buttons */
+            padding: 1vw 2vw; /* Increased padding for larger minimum size */
+            font-size: 1.5vw; /* Adjusted font size */
             cursor: pointer;
             background-color: transparent; /* Remove background color */
             color: #333; /* Text color matches the main text color */
             border: none; /* Remove button border */
             border-radius: 0.4vw; /* Adjusted border radius */
             transition: color 0.3s, transform 0.3s;
+            min-width: 120px; /* Minimum width of buttons */
+            min-height: 40px; /* Minimum height of buttons */
         }
         button:hover {
             color: #555; /* Change text color on hover */
             transform: scale(1.05); /* Slightly increase button size on hover */
+        }
+
+        /* Optional: Media query for smaller screens */
+        @media (max-width: 600px) {
+            .centered-text {
+                font-size: 12vw; /* Increase font size on smaller screens */
+            }
+            button {
+                padding: 1.5vw 3vw; /* Increase padding on smaller screens */
+                font-size: 2vw; /* Increase font size on smaller screens */
+                min-width: 100px; /* Adjust minimum width on smaller screens */
+                min-height: 35px; /* Adjust minimum height on smaller screens */
+            }
         }
     </style>
 </head>
