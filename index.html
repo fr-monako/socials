@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FR Monako</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        .centered-content {
+            text-align: center;
+        }
+        .centered-text {
+            font-size: 8vw; /* Reduced font size for the text */
+            color: #333;
+            margin-bottom: 1.5vw; /* Adjusted space between the text and buttons */
+        }
+        .buttons {
+            display: flex;
+            gap: 1.5vw; /* Reduced space between buttons */
+            justify-content: center;
+        }
+        button {
+            padding: 0.75vw 1.5vw; /* Reduced padding for the buttons */
+            font-size: 1.5vw; /* Reduced font size for the buttons */
+            cursor: pointer;
+            background-color: transparent; /* Remove background color */
+            color: #333; /* Text color matches the main text color */
+            border: none; /* Remove button border */
+            border-radius: 0.4vw; /* Adjusted border radius */
+            transition: color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            color: #555; /* Change text color on hover */
+            transform: scale(1.05); /* Slightly increase button size on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="centered-content">
+        <div class="centered-text">fr monako</div>
+        <div class="buttons">
+            <button>Button 1</button>
+            <button>Button 2</button>
+        </div>
+    </div>
+</body>
+</html>
