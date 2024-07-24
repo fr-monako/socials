@@ -54,19 +54,39 @@
                 filter: blur(0); /* Remove blur at the end */
             }
         }
+        .fade-out {
+            transition: opacity 1s ease-out;
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
-    <div class="centered-content">
+    <div class="centered-content" id="content">
         <div class="centered-text">fr monako</div>
         <div class="buttons">
             <a href="https://www.twitch.tv/usecodemonako" target="_blank" rel="noopener noreferrer">
-                <button>Twitch</button>
+                <button onclick="fadeOutAndRedirect(event, 'https://www.twitch.tv/usecodemonako')">Twitch</button>
             </a>
             <a href="https://www.youtube.com/@usecodemonako" target="_blank" rel="noopener noreferrer">
-                <button>YouTube</button>
+                <button onclick="fadeOutAndRedirect(event, 'https://www.youtube.com/@usecodemonako')">YouTube</button>
             </a>
         </div>
     </div>
+    <script>
+        function fadeOutAndRedirect(event, url) {
+            event.preventDefault();
+            const content = document.getElementById('content');
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                if (button !== event.target) {
+                    button.classList.add('fade-out');
+                }
+            });
+            content.querySelector('.centered-text').classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = url;
+            }, 1000); // Match the transition duration
+        }
+    </script>
 </body>
 </html>
