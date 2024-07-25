@@ -17,60 +17,48 @@
         }
         .centered-content {
             text-align: center;
-            opacity: 0; /* Start hidden for fade-in effect */
+            opacity: 0;
             animation: fadeIn 1s forwards, blurIn 1s forwards;
         }
         .centered-text {
-            font-size: 8vw; /* Reduced font size for the text */
+            font-size: 8vw;
             color: #333;
-            margin-bottom: 1.5vw; /* Adjusted space between the text and buttons */
+            margin-bottom: 1.5vw;
         }
         .buttons {
             display: flex;
-            gap: 1.5vw; /* Reduced space between buttons */
+            gap: 1.5vw;
             justify-content: center;
         }
         a {
-            text-decoration: none; /* Remove underline from links */
+            text-decoration: none;
         }
         button {
-            padding: 0.75vw 1.5vw; /* Reduced padding for the buttons */
-            font-size: 1.5vw; /* Reduced font size for the buttons */
+            padding: 0.75vw 1.5vw;
+            font-size: 1.5vw;
             cursor: pointer;
-            background-color: transparent; /* Remove background color */
-            color: #333; /* Text color matches the main text color */
-            border: none; /* Remove button border */
-            border-radius: 0.4vw; /* Adjusted border radius */
+            background-color: transparent;
+            color: #333;
+            border: none;
+            border-radius: 0.4vw;
             transition: color 0.3s, transform 0.3s;
         }
         button:hover {
-            color: #555; /* Change text color on hover */
-            transform: scale(1.05); /* Slightly increase button size on hover */
-            animation: blurAnimation 1s forwards; /* Apply animation on hover */
+            color: #555;
+            transform: scale(1.05);
+            animation: blurAnimation 1s forwards;
         }
         @keyframes blurAnimation {
-            0% {
-                filter: blur(1px); /* Apply blur at the start */
-            }
-            100% {
-                filter: blur(0); /* Remove blur at the end */
-            }
+            0% { filter: blur(1px); }
+            100% { filter: blur(0); }
         }
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
         @keyframes blurIn {
-            0% {
-                filter: blur(5px); /* Apply blur at the start */
-            }
-            100% {
-                filter: blur(0); /* Remove blur at the end */
-            }
+            0% { filter: blur(5px); }
+            100% { filter: blur(0); }
         }
         .fade-out {
             transition: opacity 1s ease-out;
@@ -91,11 +79,10 @@
         </div>
     </div>
     <script>
-        // Apply fade-in and blur-in effects to all elements except 'fr monako' text
         window.onload = function() {
-            const contenat = document.getElementById('content');
-            content.style.opacity = 1; // Ensure content is fully visible
-            content.style.animation = 'fadeIn 1s forwards, blurIn 1s forwards'; // Apply animations
+            const content = document.getElementById('content');
+            content.style.opacity = 1;
+            content.style.animation = 'fadeIn 1s forwards, blurIn 1s forwards';
         };
 
         function fadeOutAndRedirect(event, url) {
@@ -110,7 +97,7 @@
             content.querySelector('.centered-text').classList.add('fade-out');
             setTimeout(() => {
                 window.location.href = url;
-            }, 1000); // Match the transition duration
+            }, 1000);
         }
     </script>
 </body>
