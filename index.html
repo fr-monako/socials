@@ -17,6 +17,8 @@
         }
         .centered-content {
             text-align: center;
+            opacity: 0; /* Start hidden for fade-in effect */
+            animation: fadeIn 1s forwards, blurIn 1s forwards;
         }
         .centered-text {
             font-size: 8vw; /* Reduced font size for the text */
@@ -54,6 +56,22 @@
                 filter: blur(0); /* Remove blur at the end */
             }
         }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes blurIn {
+            0% {
+                filter: blur(5px); /* Apply blur at the start */
+            }
+            100% {
+                filter: blur(0); /* Remove blur at the end */
+            }
+        }
         .fade-out {
             transition: opacity 1s ease-out;
             opacity: 0;
@@ -73,6 +91,13 @@
         </div>
     </div>
     <script>
+        // Apply fade-in and blur-in effects to all elements except 'fr monako' text
+        window.onload = function() {
+            const contenat = document.getElementById('content');
+            content.style.opacity = 1; // Ensure content is fully visible
+            content.style.animation = 'fadeIn 1s forwards, blurIn 1s forwards'; // Apply animations
+        };
+
         function fadeOutAndRedirect(event, url) {
             event.preventDefault();
             const content = document.getElementById('content');
