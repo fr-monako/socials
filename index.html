@@ -21,26 +21,26 @@
             animation: fadeIn 1s forwards, blurIn 1s forwards;
         }
         .centered-text {
-            font-size: 8vw;
+            font-size: 8vw; /* Scales with width */
             color: #333;
-            margin-bottom: 1.5vw;
+            margin-bottom: 2vh; /* Reduced margin */
         }
         .buttons {
             display: flex;
-            gap: 1.5vw;
+            gap: 0.2vw; /* Very small gap between buttons */
             justify-content: center;
         }
         a {
             text-decoration: none;
         }
         button {
-            padding: 0.75vw 1.5vw;
-            font-size: 1.5vw;
+            padding: 1.5vh 2vw; /* Reduced padding */
+            font-size: 2.5vw; /* Adjusted size */
             cursor: pointer;
             background-color: transparent;
             color: #333;
             border: none;
-            border-radius: 0.4vw;
+            border-radius: 0.5vw; /* Smaller radius */
             transition: color 0.3s, transform 0.3s;
         }
         button:hover {
@@ -64,6 +64,31 @@
             transition: opacity 1s ease-out;
             opacity: 0;
         }
+
+        /* Media Queries for Different Aspect Ratios */
+        @media (max-aspect-ratio: 1/1) { /* Portrait or Square */
+            .centered-text {
+                font-size: 8vh; /* Prioritize height */
+            }
+            button {
+                font-size: 3vh; /* Adjust to height */
+                padding: 1.5vh 2vw; /* Reduced padding */
+            }
+            .buttons {
+                flex-direction: column;
+                gap: 0.5vh; /* Very small gap */
+            }
+        }
+
+        @media (min-aspect-ratio: 3/2) { /* Landscape */
+            .centered-text {
+                font-size: 7vw; /* Decrease size slightly */
+            }
+            button {
+                font-size: 2vw; /* Adjust to width */
+                padding: 1vh 1.5vw; /* Reduced padding */
+            }
+        }
     </style>
 </head>
 <body>
@@ -75,6 +100,9 @@
             </a>
             <a href="https://www.youtube.com/@usecodemonako" target="_blank" rel="noopener noreferrer">
                 <button onclick="fadeOutAndRedirect(event, 'https://www.youtube.com/@usecodemonako')">YouTube</button>
+            </a>
+            <a href="https://www.roblox.com/users/7113682401/profile" target="_blank" rel="noopener noreferrer">
+                <button onclick="fadeOutAndRedirect(event, 'https://www.roblox.com/users/7113682401/profile')">Roblox</button>
             </a>
         </div>
     </div>
