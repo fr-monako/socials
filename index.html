@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FR Monako - Official page with links to Twitch, YouTube, Roblox, and TikTok.">
     <title>FR Monako</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
@@ -29,6 +30,7 @@
             display: flex;
             gap: 0.2vw; /* Very small gap between buttons */
             justify-content: center;
+            flex-wrap: wrap; /* Allow buttons to wrap */
         }
         a {
             text-decoration: none;
@@ -45,7 +47,7 @@
         }
         button:hover {
             color: #555;
-            transform: scale(1.05);
+            transform: scale(1.1); /* Slightly increased scale */
             animation: blurAnimation 1s forwards;
         }
         @keyframes blurAnimation {
@@ -103,6 +105,9 @@
             </a>
             <a href="https://www.roblox.com/users/7113682401/profile" target="_blank" rel="noopener noreferrer">
                 <button onclick="fadeOutAndRedirect(event, 'https://www.roblox.com/users/7113682401/profile')">Roblox</button>
+            </a>
+            <a href="https://www.tiktok.com/@usecodemonako" target="_blank" rel="noopener noreferrer">
+                <button onclick="fadeOutAndRedirect(event, 'https://www.tiktok.com/@usecodemonako')">TikTok</button>
             </a>
         </div>
     </div>
